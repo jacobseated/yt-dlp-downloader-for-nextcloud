@@ -1,0 +1,40 @@
+{
+  "name": "downloader",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config webpack.js --progress",
+    "dev": "NODE_ENV=development webpack --config webpack.js --progress",
+    "watch": "NODE_ENV=development webpack --config webpack.js --progress --watch",
+    "lint": "eslint src",
+    "stylelint": "stylelint src/**/*.vue src/**/*.scss src/**/*.css"
+  },
+  "browserslist": [
+    "extends @nextcloud/browserslist-config"
+  ],
+  "dependencies": {
+    "@nextcloud/vue": "^8.21.0",
+    "axios": "^1.7.9",
+    "vue": "^2.7.16"
+  },
+  "devDependencies": {
+    "@nextcloud/browserslist-config": "^3.0.1",
+    "@nextcloud/eslint-config": "^8.3.0",
+    "@nextcloud/stylelint-config": "^2.4.0",
+    "@nextcloud/webpack-vue-config": "^6.0.1",
+    "eslint-webpack-plugin": "^4.1.0",
+    "stylelint-webpack-plugin": "^5.0.0"
+  },
+  "description": "A template to get started with Nextcloud app development.",
+  "main": ".eslintrc.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": ""
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>downloader</id>
+	<name>Downloader</name>
+	<summary>Download media files (yt-dlp needs to be installed on the server)</summary>
+	<description>App that allows downloading media files with yt-dlp</description>
+	<version>1.0.0</version>
+	<licence>agpl</licence>
+	<author mail="jacobseated@gmail.com" homepage="https://beamtic.com">JacobSeated</author>
+	<namespace>Downloader</namespace>
+	<category>tools</category>
+	<bugs>https://beamtic.com</bugs>
+	<dependencies>
+		<nextcloud min-version="29" max-version="29"/>
+	</dependencies>
+	<navigations>
+		<navigation>
+			<id>downloader</id>
+			<name>Downloader</name>
+			<route>downloader.page.index</route>
+			<icon>app.svg</icon>
+			<type>link</type>
+		</navigation>
+	</navigations>
+</info>
