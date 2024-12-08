@@ -2,24 +2,31 @@
 
 A template to get started with Nextcloud app development.
 
-## Usage
+## Server Dependencies
 
-- To get started easily use the [Appstore App generator](https://apps.nextcloud.com/developer/apps/generate) to
-  dynamically generate an App based on this repository with all the constants prefilled.
-- Alternatively you can use the "Use this template" button on the top of this page to create a new repository based on
-  this repository. Afterwards adjust all the necessary constants like App ID, namespace, descriptions etc.
+- **yt-dlp** needs to be installed at the server at `/usr/bin/yt-dlp` E.g.
 
-Once your app is ready follow the [instructions](https://nextcloudappstore.readthedocs.io/en/latest/developer.html) to
-upload it to the Appstore.
+  Using pip:
+  ```console
+  pip install --upgrade yt-dlp
+  ```
+  
+  Or just install the binary:
+  ```console
+  wget -O /usr/bin/yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+  chmod +x /usr/bin/yt-dlp
+  ```
 
-## Resources
+- python3
+- ffmpeg
 
-### Documentation for developers:
+You should be able to easily install both **python3** and **ffmpeg** using the package manager of your operating system. E.g:
 
-- General documentation and tutorials: https://nextcloud.com/developer
-- Technical documentation: https://docs.nextcloud.com/server/latest/developer_manual
-
-### Help for developers:
-
-- Official community chat: https://cloud.nextcloud.com/call/xs25tz5y
-- Official community forum: https://help.nextcloud.com/c/dev/11
+### Ubuntu
+```console
+apt install python3 python3-pip ffmpeg
+```
+### Alpine
+```console
+apk add --no-cache python3 py3-pip ffmpeg
+```
