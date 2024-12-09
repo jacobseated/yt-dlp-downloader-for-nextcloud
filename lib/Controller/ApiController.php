@@ -54,7 +54,7 @@ class ApiController extends OCSController {
     }
 
     // Validate the File name
-    if (!preg_match('/^[a-zA-Z0-9-_\.]+$/', $fileName)) {
+    if (!preg_match('/^[a-zA-Z0-9-_]+$/', $fileName)) {
         return new DataResponse(['message' => 'File name contains invalid characters.'], 400, ['Content-Type' => 'application/json']);
     }
 
