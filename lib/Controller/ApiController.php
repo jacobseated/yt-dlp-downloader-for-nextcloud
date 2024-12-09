@@ -92,9 +92,8 @@ class ApiController extends OCSController {
     $downloadedFile = glob($tmpDir . '/' . $hashedFilename . '.*');
     if (empty($downloadedFile)) {
       return new DataResponse([
-           'message' => 'The downloaded file could not be located in the tmp folder!',
-           'output' => 'test'
-      ]);
+           'message' => 'The downloaded file could not be located in the tmp folder!'
+      ], 400, ['Content-Type' => 'application/json']);
     }
 
     try {
@@ -115,12 +114,11 @@ class ApiController extends OCSController {
       $downloaderFolder->newFile(basename($fileName . '.' .$fileExtension))->putContent($content);
     } catch (\Exception $e) {
       return new DataResponse([
-           'message' => 'Error trying to move the file',
-           'output' =>  $e->getMessage()
-      ]);
+           'message' => 'Error trying to move the file'
+      ], 500, ['Content-Type' => 'application/json']);
     }
 
-    return new DataResponse(['message' => 'success', 'file' => 'downloader/' + $fileName . '.' .$fileExtension]);
+    return new DataResponse(['message' => 'success', 'file' => 'downloader/' + $fileName . '.' .$fileExtension], 200, ['Content-Type' => 'application/json']);
   }
 
 
